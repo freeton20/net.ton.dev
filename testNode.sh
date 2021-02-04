@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get update
 yes | apt-get upgrade
-yes | apt install git -y
+yes | apt install git
 cd /
 git clone https://github.com/tonlabs/net.ton.dev.git
 cd /net.ton.dev/scripts
