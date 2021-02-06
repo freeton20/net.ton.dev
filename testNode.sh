@@ -2,17 +2,17 @@
 apt-get update
 yes | apt-get upgrade
 yes | apt install git
-cd /
+cd /srv
 git clone https://github.com/tonlabs/net.ton.dev.git
-cd /net.ton.dev/scripts
-./env.sh
+cd /srv/net.ton.dev/scripts
+. ./env.sh
 
 #fix bug with path to config
-export NETWORK_TYPE=net.ton.dev
 
 ./build.sh
+export NETWORK_TYPE=net.ton.dev
 ./setup.sh
-export PATH=$PATH:/net.ton.dev/tonos-cli
+
 ./msig_genaddr.sh
 echo 'Send tons here:'
 cat ~/ton-keys/$(hostname -s).addr
